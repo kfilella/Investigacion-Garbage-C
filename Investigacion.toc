@@ -1,0 +1,13 @@
+\select@language {spanish}
+\contentsline {section}{\numberline {1}Introducci\IeC {\'o}n}{3}
+\contentsline {section}{\numberline {2}M\IeC {\'e}todos}{3}
+\contentsline {subsection}{\numberline {2.1}Boehm-Demers-Weiser Garbage Collector}{3}
+\contentsline {subsection}{\numberline {2.2}Metodo 2}{3}
+\contentsline {subsection}{\numberline {2.3}Metodo 3}{3}
+\contentsline {section}{\numberline {3}Ventajas}{3}
+\contentsline {subsection}{\numberline {3.1}Garbage Collector}{3}
+\contentsline {subsection}{\numberline {3.2}Gesti\IeC {\'o}n manual}{3}
+\contentsline {section}{\numberline {4}Desventajas}{3}
+\contentsline {subsection}{\numberline {4.1}Garbage Collector}{3}
+\contentsline {subsection}{\numberline {4.2}Gesti\IeC {\'o}n manual}{4}
+\contentsline {section}{\numberline {5}Conclusiones}{4}
