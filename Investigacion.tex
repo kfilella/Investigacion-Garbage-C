@@ -137,14 +137,14 @@ Minimizar Anomalías. Si el allocator es configurado usando los valores default 
 \subsubsection{Algoritmos}
 
 La Dlmalloc usa dos algoritmos como base para su funcionamiento. Boundary y Binning, los cuales han permanecido aproximadamente iguales desde sus primeras versiones.
-Boundary Tags(Tags de frontera)
+Boundary Tags(Tags de frontera)\\
 
-Los pedazos de memoria llevan consigo el size tanto al principio como al final del mismo, lo que permite la implementación de dos capabilities muy importantes.
-•	Dos pedazos de memoria contiguos y sin utilizar pueden juntarse en un pedazo más grande, esto minimiza la fragmentación y el número de pedazos pequeños inutilizables.
-•	Se puede viajar a través del pedazo de memoria en cualquier dirección.
+Los pedazos de memoria llevan consigo el size tanto al principio como al final del mismo, lo que permite la implementación de dos capabilities muy importantes.\\
+•	Dos pedazos de memoria contiguos y sin utilizar pueden juntarse en un pedazo más grande, esto minimiza la fragmentación y el número de pedazos pequeños inutilizables.\\
+•	Se puede viajar a través del pedazo de memoria en cualquier dirección.\\
 
 
-\includegraphics[height=12cm]{imagenes/boundary.png}
+\includegraphics[width=14cm,height=14cm]{imagenes/boundary.png}
 
 Binning
 
@@ -152,7 +152,7 @@ Los pedazos de memoria disponibles se agrupan en contenedores, los mismos agrupa
 
 
 
-\includegraphics[height=10cm]{imagenes/binning.png}
+\includegraphics[width=14cm,height=9cm]{imagenes/binning.png}
 
 En las versiones más recientes los pedazos se ordenan dentro de los contenedores, se ordenan por tamaño y por edad.
 
@@ -160,7 +160,7 @@ Entonces en general los pedazos libres se juntan con sus vecinos libres y se met
 Thus, the general categorization of this algorithm is best-first with coalescing: Freed chunks are coalesced with neighboring ones, and held in bins that are searched in size order.
 En sistemas operativos de 32 bits el pedazo de memoria más pequeño que se puede ofrecer a la memoria virtual es de 16 bytes, en los de 64 bits el más pequeño es de 24 bytes.
 
-\includegraphics[height=6cm]{imagenes/malloc.png}
+\includegraphics[width=13cm,height=5cm]{imagenes/malloc.png}
 
 
 
