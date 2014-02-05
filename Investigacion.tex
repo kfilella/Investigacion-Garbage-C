@@ -170,10 +170,6 @@ DLmalloc es un memory allocator muy confiable. Se empezó a usar en 1987 y se ha
 DEBUGGING
 El debugging no es recomendable a no ser que el programador lo requiera en alguna aplicación específica.
 
-
-\subsection{Metodo 3}
-explicar metodo 3 aqui
-
 \section{Ventajas y desventajas}
 	Antes de entrar en detalle acerca de las ventajas y desventajas de implementar un algoritmo de recolección de basura en C, es necesario entender que no todo programa en C se comporta de igual manera. Muchas de las ventajas y desventajas detalladas a continuación pueden o no cumplirse para cierto programa. Hay varios factores que influyen en esto: la técnica de gestión manual de memoria (malloc/free), la estructura de datos, la complejidad del programa, entre otros.
 	Para los siguientes puntos, se tomara en cuenta el uso de la librería más común para recolección de basura en C, la librería Boehm-Demers-Weiser Garbage Collector o Boehm GC.
@@ -181,12 +177,12 @@ explicar metodo 3 aqui
 	Los efectos de un garbage collector, como el Boehm GC, en un programa en C pueden traer efectos variados en cuanto a la performance. Para programas pequeños que utilizan poca memoria, la implementación de un GC es probablemente innecesaria, ya que el GC requiere de un cierto espacio libre en el heap para no tener que recoger basura después de cada asignación en memoria. Ya que algunos garbage collectors expanden el heap en espacios relativamente grandes, es probable que para estos programas, parte de esa memoria nunca sea utilizada. Esto no es del todo cierto para programas con estructuras más grandes y complejas; ya que se requiere de más memoria en el heap para las asignaciones, la memoria separada por el garbage collector será utilizada más frecuente y eficientemente.
 \subsection{Desarrollo}
 	Es clara la ventaja que brinda la implementación de un garbage collector en un programa en C en términos de tiempo y esfuerzo de desarrollo. Ya que C no incorpora un recolector por default, es necesario manejar la memoria manualmente. Esto significa que el tiempo que tome gestionar la memoria manualmente será proporcional al tamaño y complejidad del programa. Se estima que un 30\% hasta 40\% del esfuerzo en el desarrollo de un programa extenso se enfoca solo en la gestión de memoria. Al utilizar un garbage collector, se reduce drásticamente el tiempo de desarrollo.
-\subsection{Confiabilidad}
-\subsection{Debugging}
+\subsection{Confiabilidad y Funcionalidad}
+	Es más fácil y confiable el uso de grandes estructuras de datos si un recolector de basura esta implementado. Esto a su vez nos evita el tedioso trabajo de manejar límites arbitrarios para ciertos parámetros (ejemplo: tamaño de un string) y asegura que el performance sea proporcional al tamaño del programa. Aunque se puede decir que en el mejor de los casos, si se utiliza una implementación perfecta de malloc/free, queda obsoleto el uso de librerías, pero se entiende que este caso es poco probable para proyectos exrtensos.
 
 \section{Conclusiones}
-
-conclusiones aqui
+	De lo que pudimos investigar, nos llamó mucho la atención el approach que tiene C en cuanto al manejo de la memoria. Ya que sus orígenes apuntan a un acercamiento “portable assembly”, el manejo de la memoria fue dejado únicamente al usuario. Hay varios casos de hardware y algoritmos que se pueden beneficiar de un manejo de memoria especializado, y la omisión de un recolector de basura default nos genera la ventaja de poder programar para utilizar esos dispositivos y algoritmos con total libertad.
+	Adicionalmente, sabemos cuándo podremos utilizar una librería con seguridad y cuando no nos conviene utilizar una para gestionar la memoria. Ya sean proyectos pequeños o grandes con los cuales nos presentemos en el futuro, sabremos cual es el camino correcto a seguir en cuanto al manejo de la memoria en C.
 
 \end{document}
 
