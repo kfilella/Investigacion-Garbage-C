@@ -104,25 +104,15 @@ explicar metodo 2 aqui
 \subsection{Metodo 3}
 explicar metodo 3 aqui
 
-\section{Ventajas}
-
-\subsection{Garbage Collector}
-
-ventajas de GC aqui
-
-\subsection{Gestión manual}
-
-ventajas de gestion manual aqui
-
-\section{Desventajas}
-
-\subsection{Garbage Collector}
-
-desventajas de GC aqui
-
-\subsection{Gestión manual}
-
-desventajas de gestion manual aqui
+\section{Ventajas y desventajas}
+	Antes de entrar en detalle acerca de las ventajas y desventajas de implementar un algoritmo de recolección de basura en C, es necesario entender que no todo programa en C se comporta de igual manera. Muchas de las ventajas y desventajas detalladas a continuación pueden o no cumplirse para cierto programa. Hay varios factores que influyen en esto: la técnica de gestión manual de memoria (malloc/free), la estructura de datos, la complejidad del programa, entre otros.
+	Para los siguientes puntos, se tomara en cuenta el uso de la librería más común para recolección de basura en C, la librería Boehm-Demers-Weiser Garbage Collector o Boehm GC.
+\subsection{Performance}
+	Los efectos de un garbage collector, como el Boehm GC, en un programa en C pueden traer efectos variados en cuanto a la performance. Para programas pequeños que utilizan poca memoria, la implementación de un GC es probablemente innecesaria, ya que el GC requiere de un cierto espacio libre en el heap para no tener que recoger basura después de cada asignación en memoria. Ya que algunos garbage collectors expanden el heap en espacios relativamente grandes, es probable que para estos programas, parte de esa memoria nunca sea utilizada. Esto no es del todo cierto para programas con estructuras más grandes y complejas; ya que se requiere de más memoria en el heap para las asignaciones, la memoria separada por el garbage collector será utilizada más frecuente y eficientemente.
+\subsection{Desarrollo}
+	Es clara la ventaja que brinda la implementación de un garbage collector en un programa en C en términos de tiempo y esfuerzo de desarrollo. Ya que C no incorpora un recolector por default, es necesario manejar la memoria manualmente. Esto significa que el tiempo que tome gestionar la memoria manualmente será proporcional al tamaño y complejidad del programa. Se estima que un 30\% hasta 40\% del esfuerzo en el desarrollo de un programa extenso se enfoca solo en la gestión de memoria. Al utilizar un garbage collector, se reduce drásticamente el tiempo de desarrollo.
+\subsection{Confiabilidad}
+\subsection{Debugging}
 
 \section{Conclusiones}
 
